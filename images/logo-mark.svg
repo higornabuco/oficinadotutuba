@@ -1,0 +1,33 @@
+<svg width="600" height="600" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="35%" cy="30%" r="80%">
+      <stop offset="0%" stop-color="#5C6236"/>
+      <stop offset="55%" stop-color="#474B28"/>
+      <stop offset="100%" stop-color="#2E3018"/>
+    </radialGradient>
+  </defs>
+
+  <!-- base -->
+  <circle cx="100" cy="100" r="98" fill="url(#bg)"/>
+  <circle cx="100" cy="100" r="98" fill="none" stroke="#211F16" stroke-opacity="0.35" stroke-width="2"/>
+
+  <!-- perforated ring, referencing the service-ticket motif from the site -->
+  <circle cx="100" cy="100" r="84" fill="none" stroke="#FAA81E" stroke-width="2.5" stroke-dasharray="1 9" stroke-linecap="round" opacity="0.85"/>
+
+  <!-- ticket hole accent -->
+  <circle cx="100" cy="49" r="7" fill="#F4EFE2"/>
+  <circle cx="100" cy="49" r="7" fill="none" stroke="#211F16" stroke-opacity="0.18" stroke-width="1.5"/>
+
+  <!-- monitor: screen -->
+  <rect x="54" y="79" width="92" height="58" rx="7" fill="#2E3018" stroke="#FAA81E" stroke-width="5.5"/>
+  <!-- power light on the screen bezel -->
+  <circle cx="136" cy="129" r="4" fill="#BD4B27"/>
+  <!-- terminal prompt on screen, ties into the site's tech/mono language -->
+  <text x="100" y="117" text-anchor="middle"
+        font-family="DejaVu Sans Mono, Liberation Mono, monospace"
+        font-weight="bold" font-size="25" fill="#FAA81E">&gt;_</text>
+
+  <!-- monitor: stand + base -->
+  <path d="M91,137 L109,137 L113,151 L87,151 Z" fill="#FAA81E"/>
+  <rect x="74" y="151" width="52" height="7" rx="3.5" fill="#FAA81E"/>
+</svg>
