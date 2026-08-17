@@ -1,5 +1,5 @@
 /* =======================================================
-   CONSERTA RIO — script.js
+   OFICINA DO TUTUBA — script.js
    ---------------------------------------------------------
    TUDO que você provavelmente vai querer editar no dia a dia
    (número de WhatsApp, serviços, bairros) está no objeto
@@ -67,21 +67,17 @@ const CONFIG = {
   ],
 };
 
-/* =======================================================
-   A partir daqui é lógica de renderização — normalmente não
-   precisa editar.
-   ======================================================= */
-
-function buildWhatsappUrl(msgKey){
+// Logica de renderização
+function buildWhatsappUrl(msgKey) {
   const text = CONFIG.messages[msgKey] || CONFIG.messages.ola;
   return `https://wa.me/${CONFIG.whatsappNumber}?text=${encodeURIComponent(text)}`;
 }
 
-function buildInstagramUrl(){
+function buildInstagramUrl() {
   return `https://instagram.com/${CONFIG.instagramHandle}`;
 }
 
-function wireWhatsappButtons(){
+function wireWhatsappButtons() {
   document.querySelectorAll(".js-whatsapp").forEach((el) => {
     const key = el.dataset.msg || "ola";
     el.setAttribute("href", buildWhatsappUrl(key));
@@ -90,7 +86,7 @@ function wireWhatsappButtons(){
   });
 }
 
-function wireInstagramButtons(){
+function wireInstagramButtons() {
   const url = buildInstagramUrl();
   document.querySelectorAll(".js-instagram").forEach((el) => {
     el.setAttribute("href", url);
@@ -99,7 +95,7 @@ function wireInstagramButtons(){
   });
 }
 
-function renderServiceTickets(){
+function renderServiceTickets() {
   const grid = document.getElementById("ticketGrid");
   if (!grid) return;
 
@@ -113,14 +109,14 @@ function renderServiceTickets(){
   `).join("");
 }
 
-function renderZoneChips(){
+function renderZoneChips() {
   const wrap = document.getElementById("areaChips");
   if (!wrap) return;
 
   wrap.innerHTML = CONFIG.zones.map((z) => `<span class="chip">${z}</span>`).join("");
 }
 
-function wireMobileNav(){
+function wireMobileNav() {
   const toggle = document.getElementById("navToggle");
   const nav = document.getElementById("nav");
   if (!toggle || !nav) return;
@@ -138,7 +134,7 @@ function wireMobileNav(){
   });
 }
 
-function wireHeaderShadow(){
+function wireHeaderShadow() {
   const header = document.getElementById("header");
   if (!header) return;
 
@@ -149,7 +145,7 @@ function wireHeaderShadow(){
   window.addEventListener("scroll", onScroll, { passive: true });
 }
 
-function wireScrollReveal(){
+function wireScrollReveal() {
   const items = document.querySelectorAll("[data-reveal]");
   if (!items.length) return;
 
